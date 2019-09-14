@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter.filedialog import askopenfilename, askopenfilenames, askdirectory
-
 import os.path
 from subprocess import call
 
@@ -12,7 +11,6 @@ global file_dir, final_dest
 file_dir = ''
 final_dest = ''
 hasPassword = False
-
 
 def choose_file():
 
@@ -53,8 +51,6 @@ def choose_files():
 ##    except(ValueError,IndexError):
 ##        print("FILE NOT FOUND!")
 
-    
-
 def choose_dest():
 
     global final_dest
@@ -63,7 +59,6 @@ def choose_dest():
     
     print(final_dest)
     
-
     #check if directory exists
     try:
         check = os.path.exists(final_dest)
@@ -71,9 +66,6 @@ def choose_dest():
             raise ValueError('False Path')
     except(ValueError,IndexError):
         print("PATH NOT FOUND")
-
-    
-
 
 def to_commandline():
 
@@ -83,14 +75,9 @@ def to_commandline():
 
     os.system(commander)
     print(commander)
-    
-    call(str(commander), shell=True)
-
-    
+    call(str(commander), shell=True)  
 
 Title = root.title( "SUDO extractor 1.0")
-#Menu Bar
-
 
 b1 = Button(root, text="SELECT A FILE", command=choose_file)
 b1.pack()
@@ -108,4 +95,3 @@ b5 = Button(root, text="EXIT", command=lambda:exit())
 b5.pack()
 
 root.mainloop()
-
